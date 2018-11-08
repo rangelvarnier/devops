@@ -1,0 +1,18 @@
+# Java
+
+```
+$ brew install maven
+```
+
+# JS
+
+```
+$ brew install node
+```
+
+# Tools
+
+## oh-my-zsh
+````
+$ brew install zsh zsh-completions
+```

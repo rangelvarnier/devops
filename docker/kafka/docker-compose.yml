@@ -1,0 +1,34 @@
+version: '2'
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: 'confluentinc/cp-zookeeper:4.0.0'
+    environment:
+      ZOOKEEPER_CLIENT_PORT: '32181'
+    ports:
+      - '32181:32181'
+  kafka:
+    container_name: kafka
+    image: 'confluentinc/cp-kafka:4.0.0'
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:32181'
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://127.0.0.1:29092'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - '29092:29092'
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper
+  kafka-manager:
+    image: sheepkiller/kafka-manager
+    tty: true
+    ports:
+      - '9000:9000'
+    environment:
+      ZK_HOSTS: 'zookeeper:32181'
+      APPLICATION_SECRET: letmein
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper

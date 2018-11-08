@@ -1,0 +1,17 @@
+version: '2'
+services:
+  activemq:
+    image: webcenter/activemq
+    environment:
+      ACTIVEMQ_CONFIG_NAME: amqp-srv1
+      ACTIVEMQ_CONFIG_DEFAULTACCOUNT: 'false'
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: password
+      ACTIVEMQ_USERS_myproducer: producerpassword
+      ACTIVEMQ_GROUPS_writes: myproducer
+      ACTIVEMQ_USERS_myconsumer: consumerpassword
+      ACTIVEMQ_GROUPS_reads: myconsumer
+    ports:
+      - '8161:8161'
+      - '61616:61616'
+      - '61613:61613'

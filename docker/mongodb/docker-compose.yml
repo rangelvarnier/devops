@@ -1,0 +1,17 @@
+version: '2'
+volumes:
+  mongo_data:
+    driver: local
+services:
+  mongo:
+    image: 'mongo:latest'
+    volumes:
+      - 'mongo_data:/data'
+    ports:
+      - '27017:27017'
+  admin:
+    image: 'mongo-express:latest'
+    links:
+      - 'mongo:mongo'
+    ports:
+      - '9000:8081'

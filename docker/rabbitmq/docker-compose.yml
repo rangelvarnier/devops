@@ -1,0 +1,11 @@
+version: '2'
+services:
+  some-rabbit:
+    image: 'rabbitmq:3-management'
+    hostname: my-rabbit
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - '8080:15672'
+      - '5672:5672'

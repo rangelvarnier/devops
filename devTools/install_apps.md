@@ -6,6 +6,8 @@ $ brew install maven
 
 # JS
 
+## [Node js](https://nodejs.org)
+
 ```
 $ brew install node
 ```
@@ -26,3 +28,11 @@ $ brew install zsh zsh-completions
 brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
+
+# Developer Tools
+
+## [Insomnia Rest](https://insomnia.rest/)
+```
+$ brew cask install insomnia
+```
+

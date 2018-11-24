@@ -29,6 +29,14 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
 
+## Nerd Fonts
+
+```
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+```
+
+
 # Developer Tools
 
 ## [Insomnia Rest](https://insomnia.rest/)
